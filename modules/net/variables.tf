@@ -1,3 +1,22 @@
+variable "sg_ingress_rules" {
+  type = list(object({
+    from_port    = number
+    to_port      = number
+    protocol     = string
+    source_sg_id = any
+    description  = string
+  }))
+  default = [
+    {
+      from_port    = 5000
+      to_port      = 5000
+      protocol     = "tcp"
+      source_sg_id = null
+      description  = "test"
+    },
+  ]
+}
+
 variable "default_gateway" {
   default = "0.0.0.0/0"
 }

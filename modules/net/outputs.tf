@@ -15,5 +15,5 @@ output "tg_id" {
 }
 
 output "ecs_sg_id" {
-  value = aws_security_group.ecs.id
+  value = aws_security_group.ecs[0].id
 }
