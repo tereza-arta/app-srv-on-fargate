@@ -1,7 +1,7 @@
 resource "aws_alb" "alb" {
   name            = "cb-load-balancer"
   subnets         = aws_subnet.pub.*.id
-  security_groups = [aws_security_group.lb.id]
+  security_groups = [aws_security_group.lb[0].id]
 }
 
 resource "aws_alb_target_group" "this" {
